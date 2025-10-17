@@ -1,15 +1,15 @@
 import json, os
 
-DATA_FILE = "data/inventory.json"
+INVENTORY_FILE = "data/inventory.json"
 
 def load_inventory():
-    if not os.path.exists(DATA_FILE):
+    if not os.path.exists(INVENTORY_FILE):
         return {}
-    with open(DATA_FILE, "r") as f:
+    with open(INVENTORY_FILE, "r") as f:
         return json.load(f)
 
 def save_inventory(inventory):
-    with open(DATA_FILE, "w") as f:
+    with open(INVENTORY_FILE, "w") as f:
         json.dump(inventory, f, indent=4)
 
 def add_item():
